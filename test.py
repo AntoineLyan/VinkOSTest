@@ -2,6 +2,7 @@ import mysql.connector
 from mysql.connector import Error
 import pandas as pd
 from datetime import datetime
+import zipfile
 
 
 def conect_db():
@@ -90,3 +91,18 @@ def process_estadistica(conn, archivos_validados : list):
         df = convertir_columns_df(df)
         insert_estadistica(conn=conn, df=df)
     conn.close()
+
+
+def create_bkp(files : list):
+    date = datetime.now()
+    date_str = date.strftime('%Y-%m-%d-%H-%M-%S')
+
+    archivo_zip = zipfile.ZipFile(f'visitas/bckp/{date_str}.zip', 'w')
+
+    for archivo in files:
+        archivo_zip.write('archivostxt/' + archivo, arcname=archivo)
+
+    archivo_zip.close()
+
+files = ['report_6.txt', 'report_7.txt']
+create_bkp(files=files)
