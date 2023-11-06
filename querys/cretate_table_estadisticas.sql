@@ -1,0 +1,20 @@
+CREATE TABLE vinkosdb.estadistica (
+	idEstadistica INT AUTO_INCREMENT PRIMARY KEY,
+    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    email VARCHAR(100) NOT NULL,
+    jyv FLOAT,
+    badmail VARCHAR(20),
+    baja VARCHAR(2),
+    fechaEnvio DATETIME,
+    fechaOpen DATETIME,
+    opens INT NOT NULL, 
+    opensVirales INT NOT NULL, 
+    fechaClick DATETIME,
+    clicks INT NOT NULL,
+    clicksVirales INT NOT NULL,
+    links VARCHAR(25),
+    IPs VARCHAR(50),
+    Navegadores VARCHAR(100),
+    Plataformas VARCHAR(100)
+);
