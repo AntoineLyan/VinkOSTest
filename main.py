@@ -3,6 +3,7 @@ import dotenv
 import os
 import pandas as pd
 from email_validator import validate_email, EmailNotValidError
+from test import insert_errors, conect_db
 
 
 def read_files_to_client():
@@ -112,7 +113,11 @@ def check_layout():
 
     return error_df, valid_data
         
+def ready():
+    errores, archivos_validos = check_layout()
+    print(archivos_validos)
+    print(errores)
+    #conn = conect_db()
+    # insert_errors(conn=conn, df=errores)
+    # conn.close()
 
-errores, archivos_validos = check_layout()
-
-print(errores['Error'])

@@ -33,6 +33,16 @@ def insert_estadistica(conn, df):
         conn.commit()
         cursor.close()
 
+def insert_errors(conn,df):
+    for _ , row in df.iterrows():
+        query = ("INSERT INTO vinkosdb.errores (nameRegister, messageError)"
+        "VALUES (%s, %s)")
+        data = (row['Archivo'], row['Error'])
+        cursor = conn.cursor()
+        cursor.execute(query, data)
+        conn.commit()
+        cursor.close()
+
 
 def convertir_valor(valor):
     if valor in ('-', 'NaN'):
@@ -71,12 +81,12 @@ def convertir_columns_df(df):
         df[columna] = df[columna].apply(convertir_fecha)
     return df
 
-def main():
-    conn = conect_db()
-    df = pd.read_csv('archivostxt/report_8.txt', sep=',' , nrows=111)
-    df = formateo_NaN(df)
-    df = convertir_columns_df(df)
-    insert_estadistica(conn=conn, df=df)
-    conn.close()
 
-main()
+
+def process_estadistica(conn, archivos_validados : list):
+    for file in archivos_validados:
+        df = pd.read_csv('archivostxt/'+ file, sep=',')
+        df = formateo_NaN(df)
+        df = convertir_columns_df(df)
+        insert_estadistica(conn=conn, df=df)
+    conn.close()

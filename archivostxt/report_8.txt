@@ -1,5 +1,5 @@
 email,jyv,Badmail,Baja,Fecha envio,Fecha open,Opens,Opens virales,Fecha click,Clicks,Clicks virales,Links,IPs,Navegadores,Plataformas
-migue_235yahoo.com,,,,08/02/2013 18:30,-,0,0,-,0,0,-,-,-,-
+migue_235@yahoo.com,,,,08/02/2013 18:30,-,0,0,-,0,0,-,-,-,-
 mrtachi@yahoo.com,,,,08/02/2013 18:30,-,0,0,-,0,0,-,-,-,-
 hugo-nieves@yahoo.com,,,,08/02/2013 18:30,-,0,0,-,0,0,-,-,-,-
 pekeax@yahoo.com,,,,08/02/2013 18:30,-,0,0,-,0,0,-,-,-,-
