@@ -103,6 +103,3 @@ def create_bkp(files : list):
         archivo_zip.write('archivostxt/' + archivo, arcname=archivo)
 
     archivo_zip.close()
-
-files = ['report_6.txt', 'report_7.txt']
-create_bkp(files=files)

@@ -1,0 +1,8 @@
+CREATE TABLE vinkosdb.bitacora (
+	idBitacora INT AUTO_INCREMENT PRIMARY KEY,
+    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    registersFounds INT NOT NULL,
+    registersCorrects INT NOT NULL,
+    processingTime  FLOAT NOT NULL
+);
